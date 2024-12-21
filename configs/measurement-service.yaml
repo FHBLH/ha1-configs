@@ -1,0 +1,19 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/measurement
+    username: measurement-service
+    password: swvs
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
