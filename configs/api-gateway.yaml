@@ -13,6 +13,7 @@ spring:
               - POST
               - PUT
               - DELETE
+              - OPTIONS
       routes:
         - id: measurement-service
           uri: lb://MEASUREMENT-SERVICE
