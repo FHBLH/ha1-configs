@@ -11,6 +11,8 @@ spring:
             allowedMethods:
               - GET
               - POST
+              - PUT
+              - DELETE
       routes:
         - id: measurement-service
           uri: lb://MEASUREMENT-SERVICE
