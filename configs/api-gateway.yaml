@@ -20,9 +20,7 @@ spring:
         - id: measurement-service
           uri: lb://MEASUREMENT-SERVICE
           predicates:
-            - Path=/api/**
-          filters:
-            - StripPrefix=1
+            - Path=/**
 
 eureka:
   client:
