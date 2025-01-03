@@ -1,0 +1,24 @@
+server:
+  port: 0
+
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/measurement
+    username: measurement-service
+    password: swvs
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+springdoc:
+  swagger-ui:
+    url: /openapi/docs.yaml
+  api-docs:
+    enabled: false
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${DOCKER_HOST}
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:8761/eureka

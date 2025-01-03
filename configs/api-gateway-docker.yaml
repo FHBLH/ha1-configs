@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: measurement-service
+          uri: lb://MEASUREMENT-SERVICE
+          predicates:
+            - Path=/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://service-registry:8761/eureka"
